@@ -44,7 +44,11 @@ body {
 }
 
 .splitter span {
-  letter-spacing: 0.35rem;
+  font-size: 22px;
+  font-weight: 300;
+  word-spacing: 3px;
+
+  letter-spacing: 0.5rem;
 }
 
 .rowflex {
