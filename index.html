@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Space+Mono&display=swap"
+    />
+
+    <title>Frontend Mentor | Tip calculator app</title>
+
+    <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+    <style>
+      .attribution {
+        font-size: 11px;
+        text-align: center;
+      }
+      .attribution a {
+        color: hsl(228, 45%, 44%);
+      }
+    </style>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Space+Mono&display=swap"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+  </head>
+  <body>
+    <div class="wrapper colflex">
+      <h3 class="splitter">SPLI<br /><span>TTER</span></h3>
+      <div class="container">
+        <div class="input colflex">
+          <!-- dividing left section in two three parts -->
+          <div class="bill colflex">
+            <label for="bill-amount"> Bill</label>
+            <!-- pseudo can be used to put $ sign in left side 
+  -->
+            <div class="group-input colflex">
+              <input
+                type="number"
+                oninput="bill_value()"
+                placeholder="0"
+                value="0"
+                min="0"
+                id="bill-amount"
+              />
+              <div class="abs rowflex">$</div>
+            </div>
+          </div>
+
+          <!-- it can be trickier to get it done while making it reflexive also -->
+          <div class="tip colflex">
+            <h3>Select Tip %</h3>
+
+            <div class="percent rowflex">
+              <button class="btn" value="5">5%</button>
+              <button class="btn" value="10">10%</button>
+              <button class="btn" value="15">15%</button>
+              <button class="btn" value="25">25%</button>
+              <button class="btn" value="50">50%</button>
+              <input
+                class="btn custombtn"
+                type="number"
+                value="0"
+                placeholder="Custom"
+              />
+            </div>
+          </div>
+
+          <!-- have  the same approach here like bill section -->
+
+          <div class="people colflex">
+            <label for="people_num">Number of People</label>
+            <div class="group-input colflex">
+              <input
+                id="people_num"
+                min="0"
+                oninput="total_person()"
+                type="number"
+                placeholder="0"
+              />
+              <div class="abs rowflex"><i class="fas fa-user"></i></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- IT IS Also like you can just try to divide everything  in flex view and so 
+    u can take it as simple -->
+
+        <div class="output colflex">
+          <div class="child tip-amount rowflex">
+            <div class="left colflex">
+              <h2 class="main-heading">Tip Amount</h2>
+              <h4 class="sub">/ person</h4>
+            </div>
+            <div class="right" id="tip_person">$0.00</div>
+          </div>
+
+          <div class="child total rowflex">
+            <div class="left">
+              <h2 class="main-heading">Total</h2>
+              <h4 class="sub">/ person</h4>
+            </div>
+            <div id="total_person" class="right">$0.00</div>
+          </div>
+
+          <div class="reset child">
+            <button class="RESET" onclick="reset()">RESET</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- <div class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+    Coded by <a href="#">Your Name Here</a>.
+  </div> -->
+
+    <script src="index.js"></script>
+  </body>
+</html>
